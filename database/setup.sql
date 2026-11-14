@@ -1,7 +1,7 @@
 -- COMP 3005: PostgreSQL student database setup.
 -- Run this script ONCE in a NEW, EMPTY student_management_db database.
--- If you already created the table and inserted the three original students,
--- do not run it again in your existing database.
+-- If the table is already created and inserted the three original students,
+-- do not run it again in the existing database.
 
 -- DDL: Create the students table with the exact assignment schema.
 CREATE TABLE students (
