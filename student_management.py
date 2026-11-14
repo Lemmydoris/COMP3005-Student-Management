@@ -1,8 +1,7 @@
 import psycopg2
 from getpass import getpass
 
-# Keep one database connection for the duration of the application.
-# The underscore shows that this variable is for internal use.
+# the database connection.
 _connection = None
 
 def connectDatabase():
