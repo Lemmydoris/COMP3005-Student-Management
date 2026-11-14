@@ -29,18 +29,16 @@ def connectDatabase():
         print("Database connection failed:", error)
         return None
 
-
 def getAllStudents():
     """Retrieve and display every record from the students table."""
     connection = connectDatabase()
     if connection is None:
         return
-
     cursor = None
     try:
         cursor = connection.cursor()
 
-        # SELECT retrieves all records, sorted by their student ID.
+        # SELECT retrieves all records, that are sorted by their student ID.
         cursor.execute("SELECT * FROM students ORDER BY student_id;")
         students = cursor.fetchall()
         connection.commit()
@@ -58,7 +56,6 @@ def getAllStudents():
     finally:
         if cursor is not None:
             cursor.close()
-
 
 def addStudent(first_name, last_name, email, enrollment_date):
     """Insert a new student with the supplied details."""
@@ -97,13 +94,11 @@ def addStudent(first_name, last_name, email, enrollment_date):
         if cursor is not None:
             cursor.close()
 
-
 def updateStudentEmail(student_id, new_email):
     """Update the email address for the student with the given ID."""
     if not new_email.strip():
         print("Email cannot be empty.")
         return
-
     connection = connectDatabase()
     if connection is None:
         return
@@ -134,7 +129,6 @@ def updateStudentEmail(student_id, new_email):
     finally:
         if cursor is not None:
             cursor.close()
-
 
 def deleteStudent(student_id):
     """Delete the student record with the given ID."""
@@ -167,7 +161,6 @@ def deleteStudent(student_id):
     finally:
         if cursor is not None:
             cursor.close()
-
 
 def closeDatabase():
     """Close the shared connection when the program exits."""
