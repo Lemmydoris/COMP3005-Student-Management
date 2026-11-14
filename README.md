@@ -3,8 +3,8 @@
 This project implements the required PostgreSQL `students` table and four database operations using Python and `psycopg2`.
 
 ## Requirements
-- PostgreSQL running locally, with pgAdmin 4 available
-- Python 3.11 (or a compatible Python 3 version)
+- PostgreSQL should be running locally, with pgAdmin 4 available
+- Python 3.11 or a compatible Python 3 version
 - The `psycopg2-binary` package
 
 ## Project files
