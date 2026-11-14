@@ -2,14 +2,14 @@ import psycopg2
 from getpass import getpass
 
 # Keep one database connection for the duration of the application.
-# The leading underscore shows that this variable is for internal use.
+# The underscore shows that this variable is for internal use.
 _connection = None
 
 def connectDatabase():
     """Connect to PostgreSQL, reusing an existing open connection."""
     global _connection
 
-    # Avoids asking for the password again for each menu operation.
+    # This avoids asking for the password again for each menu operation.
     if _connection is not None and not _connection.closed:
         return _connection
     
@@ -38,7 +38,7 @@ def getAllStudents():
     try:
         cursor = connection.cursor()
 
-        # SELECT retrieves all records, that are sorted by their student ID.
+        # SELECT retrieves all records that are sorted by their student ID.
         cursor.execute("SELECT * FROM students ORDER BY student_id;")
         students = cursor.fetchall()
         connection.commit()
@@ -82,7 +82,7 @@ def addStudent(first_name, last_name, email, enrollment_date):
             (first_name.strip(), last_name.strip(), email.strip(), enrollment_date)
         )
 
-        # Commit permanently saves the INSERT operation.
+        # Commit helps to permanently save the INSERT operation.
         connection.commit()
         print("Student added successfully!")
 
@@ -117,14 +117,14 @@ def updateStudentEmail(student_id, new_email):
 
         if cursor.rowcount > 0:
             connection.commit()
-            print("Student email updated successfully!")
+            print("Student email is updated successfully!")
         else:
             connection.rollback()
-            print("No student found with that ID.")
+            print("No student was found with that ID.")
 
     except psycopg2.Error as error:
         connection.rollback()
-        print("Error updating student email:", error)
+        print("Error while updating student email:", error)
 
     finally:
         if cursor is not None:
