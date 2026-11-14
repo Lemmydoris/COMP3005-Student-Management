@@ -37,8 +37,6 @@ Run the application:
 - Python is interpreted and so there is no separate compilation step. If you wish to check the syntax, run:python -m py_compile student_management.py
 
 ## Application functions
-- Python is interpreted and so there is no separate compilation step. If you wish to check the syntax, run:python -m py_compile student_management.py
-
 - `getAllStudents()`: executes `SELECT * FROM students ORDER BY student_id;` and prints the results.
 - `addStudent(first_name, last_name, email, enrollment_date)`: uses a parameterized `INSERT` and commits the new record.
 - `updateStudentEmail(student_id, new_email)`: uses a parameterized `UPDATE ... WHERE student_id = %s` and commits to it when a student is found.
