@@ -8,14 +8,14 @@ This project implements the required PostgreSQL `students` table and four databa
 - The `psycopg2-binary` package
 
 ## Project files
-
+```text
 COMP3005-Student-Management/
 ├── student_management.py   # Python application and interactive menu
 ├── database/
-│   └── setup.sql           # Creates the students table and insert starter data
+│   └── setup.sql           # Creates the students table and inserts initial data
 ├── requirements.txt        # Python database connector dependency
-├── .gitignore              # Files to exclude from Git
 └── README.md               # Documentation and setup instructions
+```text
 
 ## Database setup (pgAdmin 4)
 1. Start PostgreSQL and open pgAdmin 4.
